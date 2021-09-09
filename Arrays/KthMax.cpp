@@ -3,11 +3,9 @@
 using namespace std;
 
 int findKthMaximum(int arr[],int n,int k){
-    sort(arr, arr + n);
+    sort(arr, arr + n,greater<int>());
 
-    printArray(arr,n);
-
-    return arr[n - k];
+    return arr[k - 1];
 }
 
 int main () {
