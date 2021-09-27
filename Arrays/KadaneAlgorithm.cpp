@@ -13,7 +13,6 @@ int maxSubArraySum(int arr[],int n){
         }else{
             curSum = arr[i];
         }
-
         if(maxSum < curSum){
             maxSum = curSum;
         }
