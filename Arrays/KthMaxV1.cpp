@@ -27,7 +27,7 @@ int main () {
         h.popMax();
     }
 
-    cout << h.getMax << " ";
+    cout << h.getMax() << " ";
 
     return 0;
 }
