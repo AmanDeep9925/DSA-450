@@ -16,6 +16,25 @@ int countPair(int arr[],int N,int sum){
     return count;
 }
 
+int countPairs(int arr[],int N,int sum){
+    int count = 0;
+    unordered_map<int,int> map;
+
+    for(int i=0; i < N;++i){
+        map[arr[i]]++;
+    }
+
+    for(int i=0; i < N;++i){
+        count += map[sum - arr[i]];
+
+        if(sum - arr[i] == arr[i]){
+            count--;
+        }
+    }
+
+    return count / 2;
+}
+
 int main () {
     int N;
     cin >> N;
@@ -27,8 +46,9 @@ int main () {
     int sum = 0;
     cin >> sum ;
 
-    int pairs = countPair(arr,N,sum);
+    // int pairs = countPair(arr,N,sum);
 
+    int pairs = countPairs(arr,N,sum);
     cout << pairs << "\n";
     return 0;
 }
